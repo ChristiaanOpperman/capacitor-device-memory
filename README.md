@@ -13,7 +13,7 @@ A simple Capacitor plugin to retrieve system memory info on Android and iOS.
 ## 📦 Installation
 
 ```bash
-npm install @christiaan/device-memory
+npm install capacitor-device-memory
 npx cap sync
 ```
 
@@ -22,7 +22,7 @@ npx cap sync
 ## 🛠 Usage
 
 ```ts
-import { DeviceMemory } from '@christiaan/device-memory';
+import { DeviceMemory } from 'capacitor-device-memory';
 
 const memory = await DeviceMemory.getMemoryInfo();
 
