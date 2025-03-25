@@ -1,7 +1,7 @@
 {
   "name": "capacitor-device-memory",
-  "version": "1.0.0",
-  "description": "Capacitor plugin to get device memory info from Android and iOS",
+  "version": "1.0.1",
+  "description": "A Capacitor plugin to retrieve system memory information from Android and iOS devices.",
   "main": "dist/plugin.cjs.js",
   "types": "dist/definitions.d.ts",
   "files": [
@@ -10,8 +10,34 @@
     "ios/",
     "src/"
   ],
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "android",
+    "ios",
+    "memory",
+    "ram",
+    "device-info"
+  ],
   "author": "Christiaan Opperman",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristiaanOpperman/capacitor-device-memory"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0",
+    "typescript": "^4.9.5",
+    "rollup": "^3.0.0"
+  },
   "publishConfig": {
     "access": "public"
   }
