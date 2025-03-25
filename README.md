@@ -1,37 +1,70 @@
-# device-memory
+# capacitor-device-memory
 
-Retrieves total and available device memory on Android using /proc/meminfo
+A simple Capacitor plugin to retrieve system memory info on Android and iOS.
 
-## Install
+## ✨ Features
+
+- ✅ Android: Returns total and available memory (via `/proc/meminfo`)
+- ✅ iOS: Returns total memory only (as Apple restricts available memory access)
+- ⚡ Fully compatible with Capacitor 6+
+
+---
+
+## 📦 Installation
 
 ```bash
-npm install device-memory
+npm install @christiaan/device-memory
 npx cap sync
 ```
 
-## API
+---
 
-<docgen-index>
+## 🛠 Usage
 
-* [`echo(...)`](#echo)
+```ts
+import { DeviceMemory } from '@christiaan/device-memory';
 
-</docgen-index>
+const memory = await DeviceMemory.getMemoryInfo();
 
-<docgen-api>
-<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-### echo(...)
-
-```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+console.log(`Total: ${memory.totalMem} KB`);
+console.log(`Available: ${memory.availableMem} KB`);
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+> ℹ️ Values are returned in **kilobytes (KB)** for consistency with `/proc/meminfo`.
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+---
 
---------------------
+## 🔍 API
 
-</docgen-api>
+### `getMemoryInfo()`
+
+Returns:
+```ts
+interface MemoryInfo {
+  totalMem: number;       // Total physical memory in KB
+  availableMem: number;   // Available memory in KB (0 on iOS)
+}
+```
+
+---
+
+## 📱 Platform Support
+
+| Platform | Support | Notes                              |
+|----------|---------|------------------------------------|
+| Android  | ✅       | Uses `/proc/meminfo`               |
+| iOS      | ✅       | Only total memory is available     |
+| Web      | ❌       | Not supported                      |
+
+---
+
+## 🧑‍💻 Author
+
+Christiaan Opperman  
+[@christiaanopperman](https://github.com/your-github-if-applicable)
+
+---
+
+## 📄 License
+
+MIT
