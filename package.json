@@ -1,6 +1,6 @@
 {
   "name": "capacitor-device-memory",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Capacitor plugin to retrieve system memory information from Android and iOS devices.",
   "main": "dist/plugin.cjs.js",
   "types": "dist/definitions.d.ts",
