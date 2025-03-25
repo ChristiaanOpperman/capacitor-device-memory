@@ -1,7 +1,4 @@
 import { registerPlugin } from '@capacitor/core';
-import type { MemoryInfo } from './definitions';
+import type { MemoryInfoPlugin } from './definitions';
 
-
-export const DeviceMemory = registerPlugin<{
-  getMemoryInfo: () => Promise<MemoryInfo>;
-}>('DeviceMemory');
+export const DeviceMemory = registerPlugin<MemoryInfoPlugin>('DeviceMemory');
