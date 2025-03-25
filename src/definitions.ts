@@ -6,3 +6,4 @@ export interface MemoryInfo {
 export interface MemoryInfoPlugin {
   getMemoryInfo(): Promise<MemoryInfo>;
 }
+export * from './definitions';
